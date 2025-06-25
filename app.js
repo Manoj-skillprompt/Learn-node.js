@@ -45,3 +45,49 @@ fs.writeFile('./myFolder/newnewFile.txt','Successfully done',{flag:'a'},(err)=>{
         console.log('successfully done')
     }
 })
+
+
+//readFile()
+
+fs.readFile('./myFolder/newFile.txt',{encoding:'utf-8'},(err,data)=>{
+    if(err){
+        console.log(err)
+        return
+    }else{
+        console.log('success');
+        console.log(data);
+        
+        
+    }
+})
+
+// writing and reading file synchronously
+
+try {
+    fs.writeFileSync('./myFolder/newSyncFile.txt','this is sync method',(err)=>{
+        if(err){
+            console.log(err)
+            return
+        }else{
+            console.log("success")
+        }
+
+    })
+
+   const readFile= fs.readFileSync('./myFolder/newSyncFile.txt','utf-8')
+   console.log(readFile)
+} catch (error) {
+    console.log(error)
+}
+
+
+// delete a file using fs.unlink()
+
+fs.unlink('./myFolder/newFile.txt',(err)=>{
+    if(err){
+        console.log(err);
+        
+    }else{
+        console.log('successfully deleted')
+    }
+})

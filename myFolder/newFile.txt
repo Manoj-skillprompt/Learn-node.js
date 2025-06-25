@@ -1,1 +1,0 @@
-This is the example of creating new file and write data to it
